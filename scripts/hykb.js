@@ -79,10 +79,7 @@ async function task() {
     "https://cdn.jsdelivr.net/gh/Wenmoux/sources/other/miling.json"
   );
   await get("friend", `Secretorder&miling=${mres.data.miling}`); //密令
-  await get("wxsph", `send_egg&egg_data=${mres.data.egg}`); //视频彩蛋
   await get("grow", "GuanZhu&singleUid=21039293"); //关注我
-  await get("signhelp", "useCode&code=21039293"); //邀请码
-  await get("friend", "LingXinrenFuli");
   await get("grow", "shareEwai");
   //  await get("friend","EnterInviteCode&invitecode=sdvf180uscf3","") //填邀请码
   await getid(); //获取任务id
@@ -137,46 +134,6 @@ async function task() {
         await get("grow", `DailyJiaoHu&id=${i[2]}`); //分享任务
         break;
       case "DailyDati":
-        let ress = await get("grow", "DailyDati&id=4"); //获取题目
-        if (ress.option1 && ress.expand) {
-          i = 1;
-          kw = 1;
-          let yxid = ress.expand.split("##")[1] || "16876"; //获取游戏id
-          let urll = `https://api.3839app.com/cdn/android/gameintro-home-1546-id-${yxid}-packag--level-2.htm`;
-          let resss = await axios.get(urll);
-          if (resss.data.result) {
-            let strr = JSON.stringify(resss.data.result.data.downinfo.appinfo)
-              .replace(/&nbsp;/g, "")
-              .replace(/ /g, ""); //查答案
-            reg = /错误|不属于|不是|不存在|没有|不需要|不能|不可以/;
-            if (reg.test(ress.title)) {
-              console.log("错误类型");
-              for (i; i < 5; i++) {
-                let strrr = ress["option" + i].replace(/ /g, "");
-                if (!strr.match(strrr)) {
-                  kw = i;
-                  //        await get("grow", `DailyDatiAnswer&option=${ress["option" + i]}`, 4)
-                }
-              }
-            } else {
-              //    console.log("正确类型")
-              for (i; i < 5; i++) {
-                let strrr = ress["option" + i].replace(/ /g, "");
-                if (strr.match(strrr)) {
-                  kw = i;
-                  //   await get("grow", `DailyDatiAnswer&option=${ress["option" + kw]}`, 4)
-                }
-              }
-            }
-            //瞎鸡儿答 非游戏类问题/找不到答案
-            //算了不瞎鸡儿答了 自行去app里答吧
-          }
-          console.log("正确答案");
-          console.log(ress["option" + kw]);
-          await get("grow", `DailyDatiAnswer&option=${ress["option" + kw]}&id=4`);
-        } else {
-          console.log("劳资找不到答案,请自行去app里答题");
-        }
         break;
       case "DailyFriendLing":
         await get("grow", `DailyFriendLing&id=${i[2]}`); //照料5次

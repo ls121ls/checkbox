@@ -19,9 +19,9 @@ const axios = require("axios")
 var sckstatus = true
 
 const device = config.youlecheng.device
-const scookie = config.youlecheng.scookie
+var scookie 
 const UA = config.youlecheng.UA
-const sdevice = config.youlecheng.udid
+var sdevice
 const date = new Date()
 
 function get(ac, b, log) {
@@ -38,9 +38,10 @@ function get(ac, b, log) {
             resolve(res.data)
             if (res.data.msg && !log) {
                 console.log(res.data.msg)
-            } else if (res.data.key){
-            if(res.data.key =="nologin") ckstatus = false
-              console.log(res.data.key)}
+            } else if (res.data.key) {
+                if (res.data.key == "nologin") ckstatus = false
+                console.log(res.data.key)
+            }
         } catch (err) {
             console.log(err)
         }
@@ -49,9 +50,21 @@ function get(ac, b, log) {
 }
 async function task() {
     if (UA) {
-        //获取试玩软件id
-        let res = await get("login", "", true)
-        if(sckstatus){
+        let cookies = config.youlecheng.scookie.split('&');
+        let udids = config.youlecheng.udid.split('&');
+        for (let i = 0; i < cookies.length; ++i) {
+            scookie = cookies[i];
+           sdevice = udids[i];
+            await inittask();
+        }
+    } else console.log("请先填写你的User-Agent再运行脚本")
+}
+
+async function inittask() {
+
+    //获取试玩软件id
+    let res = await get("login", "", true)
+    if (sckstatus) {
         let glist = res.config.gameinfo_list
         console.log(`共获取到${glist.length}个试玩软件`)
         for (id of glist) {
@@ -87,8 +100,6 @@ async function task() {
         let ccres = await get("login", "", true)
         if (res.key == "ok") yxinfo = `【4399签到卡】积分: ${ccres.config.mark}`
         return yxinfo
+    }
 }
-    } else console.log("请先填写你的User-Agent再运行脚本")
-}
-
 module.exports = task

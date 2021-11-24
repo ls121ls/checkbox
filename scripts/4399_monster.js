@@ -13,7 +13,7 @@ bbinfo = ""
 userinfo = ""
 const udid = config.youlecheng.udid
 const device = config.youlecheng.device
-const scookie = config.youlecheng.scookie
+var scookie
 const UA = config.youlecheng.UA?config.youlecheng.UA:"..."
 function get(a, b, log) {
     return new Promise(async resolve => {
@@ -48,7 +48,7 @@ async function getinfo() {
         info = res.result.userInfo
         userinfo = `昵称: ${info.nick}\n等级: Lv${info.level}\n怪力值: ${info.monster}\n心情值: ${info.mood}`
         sckstatus = true
-    } else userinfo = res.data.message
+    } else userinfo = res.message
     return userinfo
 
 }
@@ -70,19 +70,31 @@ async function bb() {
                     await get("douWaFairyLand-feed","food=3")
                           await get("douWaFairyLand-feed","food=9")
         }
-    } else bbinfo = res.data.message
+    } else bbinfo = res.message
     return bbinfo    
 
 }
 
-
 async function task() {
-if(UA){
+    if (UA) {
+        let cookies = config.youlecheng.scookie.split('&');
+        let udids = config.youlecheng.udid.split('&');
+        for (let i = 0; i < cookies.length; ++i) {
+            scookie = cookies[i];
+            await inittask();
+        }
+    } else console.log("请先填写你的User-Agent再运行脚本")
+}
+
+async function inittask() {
     await getinfo()
     if (sckstatus) {
         let tlist = await getaskList()
         await get("yxhMonster-share","",true)
-        await get("yxhMonster-getTaskPrize", "taskId=529")
+        let res =  await get("yxhMonster-getTaskPrize", "taskId=529")
+        if(res.message.match(/授权过期/)){
+            return "授权过期，请重新登录！";
+        }
         for (task of tlist) {
             console.log(task.title)
             await get("yxhMonster-finishTask", `task_id=${task.id}&action=${task.action[0].action}`, true)
@@ -98,12 +110,14 @@ if(UA){
 }                  
         }
     bbinfo =  await bb()
+    if(bbinfo.match(/快去领养吧/)){
+        return "快去领养吧";
+    }
   //  await ddtob()
     }
     let userinfo ="【4399】:\n" +await getinfo() +"\n"+bbinfo
     console.log(userinfo)
     return userinfo
-    }else console.log("请先填写你的User-Agent再运行脚本")   
 
 }
 //task()

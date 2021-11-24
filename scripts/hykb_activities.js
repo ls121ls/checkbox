@@ -150,7 +150,10 @@ async function lottery(a, c, b) {
 async function lottery2(a, c, b, str) {
     for (i of str) {
         i = i.split("_")[2]
-        await get(`${a}/m`, `DailyAppJump&comm_id=${b}&isyuyue=0&id=${i}`)
+        let res =  await get(`${a}/m`, `DailyAppJump&comm_id=${b}&isyuyue=0&id=${i}`)
+        if(res.info.match(/已经领取过当日奖励/)||res.info.match(/结束/)){
+            continue;
+        }
         await get(`${a}/m`, `DailyAppLing&comm_id=${b}&isyuyue=0&id=${i}`)
         await get(`${a}/m`, `chouqu&comm_id=${b}&isyuyue=0&id=${i}`)
         await get(`${a}/m`, `BaoXiangLing&comm_id=${b}&isyuyue=0&id=${i}`)

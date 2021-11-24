@@ -4,6 +4,8 @@ const load = require("cheerio").load
 const hyck = config.hykb.scookie
 scookie = hyck.match(/\|/)?encodeURIComponent(hyck):hyck
 async function getid() {
+    try {
+      
     let url = `https://huodong3.3839.com/n/hykb/qdjh/index.php`
     let res = await axios.get(url)
     const $ = load(res.data)
@@ -16,7 +18,11 @@ async function getid() {
                 id: str[1].match(/hd_id=(.+)/)[1]
             })
         }
-    })
+    })  
+    } catch (error) {
+        
+        console.log(error)
+    }
 }
 game = 0
 //代码 https://res.onebiji.com/kuaibao/n/hykb/signcard/js/user.js?v_6_v43
@@ -37,7 +43,7 @@ function get(a, b) {
     })
 }
 async function task() {
-    await getid()
+     await getid()
     for (i of items) {
         //   let ss=  await get("login","319")
         //    console.log(ss.config.lb_status)
@@ -72,4 +78,4 @@ async function task() {
     }
     console.log(game)
 }
-module.exports=task()
+module.exports=task;

@@ -1,5 +1,6 @@
 /*
 4399游戏盒游乐豆任务
+等我攒够288开会员再写会员任务
 邀请链接：https://yxhhd2.5054399.com/comm/bzyld2/share/index.php?ext=3091185497
 2021-09-07 10:24
 @wenmoux
@@ -9,7 +10,7 @@ const axios = require("axios")
 var sckstatus = false
 var vip = 0
 const device = config.youlecheng.device
-const scookie = config.youlecheng.scookie
+var scookie 
 const SMid = config.youlecheng.SMid
 const UA = config.youlecheng.UA ? config.youlecheng.UA : "..."
 var sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -76,9 +77,18 @@ async function share() {
 }
 
 
-
 async function task() {
     if (UA) {
+        let cookies = config.youlecheng.scookie.split('&');
+        let udids = config.youlecheng.udid.split('&');
+        for (let i = 0; i < cookies.length; ++i) {
+            scookie = cookies[i];
+            await inittask();
+        }
+    } else console.log("请先填写你的User-Agent再运行脚本")
+}
+
+async function inittask() {
         await getinfo()
         if (sckstatus) {
             if (vip == 1) {
@@ -116,7 +126,6 @@ async function task() {
         }
         let userinfo = "【4399疯狂游乐城】:\n" + await getinfo()
         return userinfo
-    } else console.log("你把UA吃了吗,赶快去填")
 }
 
 module.exports = task;

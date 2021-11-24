@@ -9,7 +9,7 @@ const axios = require("axios")
 var sckstatus = false
 var sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const device = config.youlecheng.device
-const scookie = config.youlecheng.scookie
+var scookie
 const udid = config.youlecheng.udid
 const CryptoJS = require("crypto-js") 
 var Canstart = true
@@ -76,7 +76,16 @@ async function getinfo() {
 }
 
 async function task() {
-if(UA){
+    if (UA) {
+        let cookies = config.youlecheng.scookie.split('&');
+        let udids = config.youlecheng.udid.split('&');
+        for (let i = 0; i < cookies.length; ++i) {
+            scookie = cookies[i];
+            await inittask();
+        }
+    } else console.log("请先填写你的User-Agent再运行脚本")
+}
+async function inittask() {
     await getinfo()
     if (sckstatus &&Canstart) {
     ext = null
@@ -94,7 +103,6 @@ if(UA){
     if(oinfo.code==100) console.log("成功通关")    
    }}    
     return ""
-    }else console.log("请先填写你的User-Agent再运行脚本")   
 
 }
 //task()
