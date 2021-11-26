@@ -4,6 +4,7 @@ https://www.mobayx.com/2017/hebi2/
 邀请链接：https://yxhhd2.5054399.com/comm/bzyld2/share/index.php?ext=3091185497
 2021-09-07 13:24
 联众打码 https://www.jsdati.com/
+入口：游戏福利中心-赚零花钱（需要联众账号，之后看能不能改成百度再使用）
 @wenmoux
 */
 base64img = "";
@@ -46,8 +47,8 @@ function get(ac, b, log) {
 
 async function task() {
     if (UA) {
-        let cookies = config.youlecheng.scookie.split('&');
-        let udids = config.youlecheng.udid.split('&');
+        let cookies = config.youlecheng.scookie;
+        let udids =config.youlecheng.udid;
         for (let i = 0; i < cookies.length; ++i) {
             scookie = cookies[i];
             sdevice = udids[i];

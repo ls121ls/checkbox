@@ -84,27 +84,26 @@ async function getyxid() {
 }
 
 async function getstrcode() {
-    let acturl = "https://yxhhd2.5054399.com/comm/flhdjh/?id=9199&u=3091185497&f=share&token=ba65df&hduuid=kywrnjrdq"
-    let res = await axios.get(acturl, {
-        responseType: "arraybuffer"
-    })
-    resdata = require("iconv-lite").decode(res.data, "gbk")
-    let code = resdata.match(/<a class=\".+\" data-id=\"\d+\" data-url=\".+?\">/g)
+    var code = []
+    // let acturl = "https://yxhhd2.5054399.com/comm/flhdjh/?id=9199&u=3091185497&f=share&token=ba65df&hduuid=kywrnjrdq"
+    // let res = await axios.get(acturl, {
+    //     responseType: "arraybuffer"
+    // })
+    // resdata = require("iconv-lite").decode(res.data, "gbk")
+    // code = resdata.match(/<a class=\".+\" data-id=\"\d+\" data-url=\".+?\">/g)
+    // name = resdata.match(/<p class=\"p1\">.+?福利中心<\/p>/g)
     code.push('https://yxhhd2.5054399.com/comm/fulizhongxin2/index.php?strcode=MTU="')
     code.push('https://yxhhd2.5054399.com/comm/fulizhongxin2/index.php?strcode=MTg="')
-    name = resdata.match(/<p class=\"p1\">.+?福利中心<\/p>/g)
     name.push('"<p class=\"p1\">《英雄联盟》福利中心<\/p>"')
     name.push('"<p class=\"p1\">《原神》福利中心<\/p>"')
     console.log("共" + code.length + "游戏 任务待完成")
-    //  console.log(code)
-    //  console.log(name)
     return code
 }
 
 async function task() {
     if (UA) {
-        let cookies = config.youlecheng.scookie.split('&');
-        let udids = config.youlecheng.udid.split('&');
+        let cookies = config.youlecheng.scookie;
+        let udids =config.youlecheng.udid;
         for (let i = 0; i < cookies.length; ++i) {
             scookie = cookies[i];
             await inittask();

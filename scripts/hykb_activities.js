@@ -1,8 +1,7 @@
 let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 result ="【好游快爆临时任务】:"
 const axios = require("axios")
-const hyck = config.hykb.scookie
-scookie = hyck.match(/\|/)?encodeURIComponent(hyck):hyck
+var scookie
 function get(a, b,c) {
             return new Promise(async resolve => {
                 try {
@@ -143,7 +142,7 @@ async function lottery(a, c, b) {
     //  console.log(res.data)
     await lottery2(a, c, b, str)
   }else{
-  console.log(`活动 ${c}已结束`)
+  console.log(`活动 ${c}已结束或cookie过期`)
   } 
 }
 //快爆粉丝福利80080
@@ -151,11 +150,18 @@ async function lottery2(a, c, b, str) {
     for (i of str) {
         i = i.split("_")[2]
         let res =  await get(`${a}/m`, `DailyAppJump&comm_id=${b}&isyuyue=0&id=${i}`)
-        if(res.info.match(/已经领取过当日奖励/)||res.info.match(/结束/)){
-            continue;
-        }
+    }
+    await sleep(1000*120)
+    for (i of str) {
+        i = i.split("_")[2]
         await get(`${a}/m`, `DailyAppLing&comm_id=${b}&isyuyue=0&id=${i}`)
-        await get(`${a}/m`, `chouqu&comm_id=${b}&isyuyue=0&id=${i}`)
+    }
+    for (i of str) {
+        i = i.split("_")[2]
+        let cjRet=await get(`${a}/m`, `chouqu&comm_id=${b}&isyuyue=0&id=${i}`)
+        if(cjRet.msg.match(/积分不够/)){
+            break;
+        }
         await get(`${a}/m`, `BaoXiangLing&comm_id=${b}&isyuyue=0&id=${i}`)
     }
     if (c != 0) {
@@ -221,9 +227,19 @@ async function slm() {
 }
 
 async function task1() {
+        let cookies = config.hykb.scookie;
+        for (let i = 0; i < cookies.length; ++i) {       
+            var hyck= cookies[i];
+        scookie = cookies[i].match(/\|/)?encodeURIComponent(hyck):hyck;
+            await inittask();
+        }
+}
+
+async function inittask() {
     console.log(`临时任务列表：
 1：粉丝福利80080,25525,630630,79979都可以去首页搜索对应数字绑定qq`)
     //await slm()
+    await lottery("lottery", "211124-原神", 27)
     await lottery("lottery", "60030-王牌勋章", 5)
     await lottery("lottery", "25525-补给箱", 4)
     await lottery("lottery", "79979-宝石", 3)

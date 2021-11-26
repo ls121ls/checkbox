@@ -11,7 +11,7 @@ var sckstatus = false
 var sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 bbinfo = ""
 userinfo = ""
-const udid = config.youlecheng.udid
+var udid
 const device = config.youlecheng.device
 var scookie
 const UA = config.youlecheng.UA?config.youlecheng.UA:"..."
@@ -77,10 +77,11 @@ async function bb() {
 
 async function task() {
     if (UA) {
-        let cookies = config.youlecheng.scookie.split('&');
-        let udids = config.youlecheng.udid.split('&');
+        let cookies = config.youlecheng.scookie;
+        let udids = config.youlecheng.udid;
         for (let i = 0; i < cookies.length; ++i) {
             scookie = cookies[i];
+            udid = udids[i];
             await inittask();
         }
     } else console.log("请先填写你的User-Agent再运行脚本")

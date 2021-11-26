@@ -1,6 +1,6 @@
 /*
 每天4-5次就可
-邀请链接：https://yxhhd2.5054399.com/comm/bzyld2/share/index.php?ext=3091185497
+邀请链接：https://yxhhd2.5054399.com/comm/bzyld2/share/index.php?ext=2645016024
 2021-09-07 10:24
 @wenmoux
 */
@@ -10,7 +10,7 @@ var sckstatus = false
 var sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const device = config.youlecheng.device
 var scookie
-const udid = config.youlecheng.udid
+var udid
 const CryptoJS = require("crypto-js") 
 var Canstart = true
 const UA = config.youlecheng.UA?config.youlecheng.UA:"..."
@@ -77,10 +77,11 @@ async function getinfo() {
 
 async function task() {
     if (UA) {
-        let cookies = config.youlecheng.scookie.split('&');
-        let udids = config.youlecheng.udid.split('&');
+        let cookies = config.youlecheng.scookie;
+        let udids = config.youlecheng.udid;
         for (let i = 0; i < cookies.length; ++i) {
             scookie = cookies[i];
+            udid=udids[i];
             await inittask();
         }
     } else console.log("请先填写你的User-Agent再运行脚本")

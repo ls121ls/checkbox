@@ -2,14 +2,13 @@
 //我的邀请码 sdvf180uscf3
 result = "【好游快爆】：";
 const $http = axios = require("axios");
-const hyck = config.hykb.scookie;
 const qq =  config.hykb.qq?config.hykb.qq:null
 //照料id 我没加好友所以随机取得 第一个是我,不建议改ヽ(*´з｀*)ﾉ
 //   const moment=require("moment")
 var uid = ""
 //照料id 我没加好友所以随机取得 第一个是我,不建议改ヽ(*´з｀*)ﾉ
 buid = [21039293,48653684,44191145,54216701,54184381,38442812,34977383,54099572,54060137,18344113,53950826,53334988,49100316,24158995,53043395,53746196,7495782,53752398,13268805,53540861,53169378,53481728,53480955,53236037,5015419,17998323,142234,53043027,53022651,52883552,52919017,52883915,2987459,52863870]
-scookie = hyck.match(/\|/)?encodeURIComponent(hyck):hyck
+var scookie
 function get(a, b) {
   return new Promise(async (resolve) => {
     try {
@@ -71,6 +70,15 @@ function getid() {
   });
 }
 async function task() {
+  let cookies = config.hykb.scookie;
+  for (let i = 0; i < cookies.length; ++i) {      
+    var hyck= cookies[i];
+scookie = cookies[i].match(/\|/)?encodeURIComponent(hyck):hyck;
+      await inittask();
+  }
+}
+
+async function inittask() {
   let logindata = await get("grow", "Dailylogin&id=174");
   if (logindata.key == "ok" ) {
    exdata = await get("kbexam","login")

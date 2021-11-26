@@ -79,8 +79,8 @@ async function share() {
 
 async function task() {
     if (UA) {
-        let cookies = config.youlecheng.scookie.split('&');
-        let udids = config.youlecheng.udid.split('&');
+        let cookies = config.youlecheng.scookie;
+        let udids = config.youlecheng.udid;
         for (let i = 0; i < cookies.length; ++i) {
             scookie = cookies[i];
             await inittask();

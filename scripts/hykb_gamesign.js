@@ -1,8 +1,7 @@
 let items = []
 const axios = require("axios")
 const load = require("cheerio").load
-const hyck = config.hykb.scookie
-scookie = hyck.match(/\|/)?encodeURIComponent(hyck):hyck
+var scookie
 async function getid() {
     try {
       
@@ -43,6 +42,15 @@ function get(a, b) {
     })
 }
 async function task() {
+    let cookies = config.hykb.scookie;
+    for (let i = 0; i < cookies.length; ++i) {       
+        var hyck= cookies[i];
+    scookie = cookies[i].match(/\|/)?encodeURIComponent(hyck):hyck;
+        await inittask();
+    }
+}
+
+async function inittask() {
      await getid()
     for (i of items) {
         //   let ss=  await get("login","319")
