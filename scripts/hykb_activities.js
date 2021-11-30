@@ -159,7 +159,7 @@ async function lottery2(a, c, b, str) {
     for (i of str) {
         i = i.split("_")[2]
         let cjRet=await get(`${a}/m`, `chouqu&comm_id=${b}&isyuyue=0&id=${i}`)
-        if(cjRet.msg.match(/积分不够/)){
+        if(cjRet.msg&&cjRet.msg.match(/积分不够/g)){
             break;
         }
         await get(`${a}/m`, `BaoXiangLing&comm_id=${b}&isyuyue=0&id=${i}`)

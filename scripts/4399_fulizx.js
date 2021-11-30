@@ -69,6 +69,9 @@ async function dotask(name, code, cha) {
         } else console.log(userinfo)
     } else console.log(res.msg)
 
+    console.log(res.uid+"--username:"+res.username);
+    let wdjp = await get("myprize", p)
+    console.log(wdjp);
 
     return userinfo
 }

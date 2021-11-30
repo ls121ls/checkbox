@@ -1,5 +1,5 @@
 const axios = require ("axios")
-const hyck = config.hykb.scookie
+const hyck = config.hykb.scookie[0]
 const gid = config.hykb.gid
 const key = config.hykb.key
 scookie = hyck.match(/\|/)?encodeURIComponent(hyck):hyck
@@ -21,7 +21,7 @@ async function get(a,b,key) {
 
 async function exchange() {
         await get("checkExchange", `gid=${gid}`,key) //检测
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < 1000; i++) {
         get("exchange", `goodsid=${gid}`,key) //兑换
     }
 }
