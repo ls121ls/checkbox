@@ -8,7 +8,7 @@ const axios = require("axios")
 var sckstatus = true
 var strcode = ""
 var name = []
-const device = config.youlecheng.device
+var device = config.youlecheng.device
 var scookie 
 const UA = config.youlecheng.UA ? config.youlecheng.UA : "..."
 
@@ -69,9 +69,7 @@ async function dotask(name, code, cha) {
         } else console.log(userinfo)
     } else console.log(res.msg)
 
-    console.log(res.uid+"--username:"+res.username);
-    let wdjp = await get("myprize", p)
-    console.log(wdjp);
+    // console.log(res.uid+"--username:"+res.username);
 
     return userinfo
 }
@@ -95,9 +93,14 @@ async function getstrcode() {
     // resdata = require("iconv-lite").decode(res.data, "gbk")
     // code = resdata.match(/<a class=\".+\" data-id=\"\d+\" data-url=\".+?\">/g)
     // name = resdata.match(/<p class=\"p1\">.+?福利中心<\/p>/g)
-    code.push('https://yxhhd2.5054399.com/comm/fulizhongxin2/index.php?strcode=MTU="')
+
+
+
+    // code.push('https://yxhhd2.5054399.com/comm/fulizhongxin2/index.php?strcode=MTU="')
+    // name.push('"<p class=\"p1\">《英雄联盟》福利中心<\/p>"')
+
+    
     code.push('https://yxhhd2.5054399.com/comm/fulizhongxin2/index.php?strcode=MTg="')
-    name.push('"<p class=\"p1\">《英雄联盟》福利中心<\/p>"')
     name.push('"<p class=\"p1\">《原神》福利中心<\/p>"')
     console.log("共" + code.length + "游戏 任务待完成")
     return code
@@ -120,6 +123,9 @@ async function inittask() {
         for (k = 0; k < codeList.length; k++) {
             if (sckstatus) await dotask(name[k], codeList[k])
             yxinfo += await dotask(name[k], codeList[k], 1)
+            
+    let wdjp = await get("myprize", p)
+    console.log(wdjp);
             console.log("\n\n")
         }
         return yxinfo

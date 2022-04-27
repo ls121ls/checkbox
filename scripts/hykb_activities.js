@@ -239,11 +239,7 @@ async function inittask() {
     console.log(`临时任务列表：
 1：粉丝福利80080,25525,630630,79979都可以去首页搜索对应数字绑定qq`)
     //await slm()
-    await lottery("lottery", "211124-原神", 27)
-    await lottery("lottery", "60030-王牌勋章", 5)
-    await lottery("lottery", "25525-补给箱", 4)
-    await lottery("lottery", "79979-宝石", 3)
-    await lottery("lottery2", "0", 2)
+    await lottery("lottery", "211124-原神", 39)
     let ids = await axios.get("https://cdn.jsdelivr.net/gh/Wenmoux/sources/other/id.json");
     for (id of ids.data) {
         result += await jhy(id) +"\n"

@@ -1,0 +1,349 @@
+#注意所有的冒号后边都有个空格 别删别删
+
+
+cbList: hykb_exchange_goods
+#4399_ys&4399_fulizx&4399_ylc&hykb&4399_monster&hykb_activities
+#hykb_exchange_goods
+            
+#4399游戏盒之疯狂游乐城 ua必填
+#手机号，qq号，ls17706520001
+youlecheng:
+  scookie:     
+    - 0|2645016024|4428129a6676620c20510cf2d7301d27|1adffd441|72d985975cde120fc770b22fadd76f48|2645016024
+    - 0|3767459616|06d1da80983a8064d9f29ff0200c8277|100ab3850|eded122e4c9939b0fca8ee27bf00215d|3767459616
+    - 0|3664717469|a91f057069797b88901276809ecec594|11617f736|53063b3bb31f3e4058c11a8cb310f8e5|3664717469
+    - 0|3767458879|9155addc98390743e6ba85ea6df3bdc0|102917e44|70ff29758dfa9c1eb05e8b6af0487f11|3767458879
+    - 0|3767459028|321d7d9428e862b6d9d381f60dfd3138|11aa62163|faf2f1f95ee42813aa126ffb5ff86761|3767459028
+    - 0|3686423793|d32cb2136d677e57e1c736afd406a594|18346fa43|ddb94954e7887f714bbbd7cac2cc3771|3686423793
+    - 0|3686423525|88a543507c163273005dfd4a77e9ef62|1add57622|35bae1e6cc7c802125f226cd1adee00b|3686423525
+    - 0|3686423195|84008d94b734aa78019f92dc16548cba|1d1de1095|eec4e62976bd098583077c50ece19d85|3686423195
+    - 0|3686420971|e80986982351bf996c058ba79ebcafe9|114e09430|5cb266012fef16285db0757c9597912c|3686420971
+    - 0|3686418235|ce228ce6a5dbda0e84895d0ceff0da98|1128f6f61|eb75019fbd471bf5af64600fe7fd6d3c|3686418235
+    - 0|3742509069|4a1c18762d12ddc5525e3ad34504bfc6|14168a243|d1d1c5ab51adf792bb8c92f095ca8763|3742509069
+    - 0|3742512219|5504522248f7383be7546df3258982d4|1366a6189|350a971b57d1eedf3abfc1c2bb8e787d|3742512219
+    - 0|3742511908|c74fa01b15fbbba404f5a48362b4a67e|167cdcf55|b42d26b31f805a06ee8199647203b65c|3742511908
+    - 0|3742511601|d5a2724d186969c798972a65ab67f658|1959e1c70|33d48f1de14f70533ad654f35e381830|3742511601
+    - 0|3742511178|5fcead6f88f3b72ed35681987c05027b|1c88e7f83|dd433f8ff0a85aa318b28a81e654dfec|3742511178
+    - 0|3742620093|d8d031959a63daf7929fd6bd543e1754|1840ef026|be002f1d5ea1102085b30e83ea6af697|3742620093
+    - 0|3742619901|230ea62635759a36ec5554587757808c|17ba40756|475323b7b4f1bcc47b54dc6f13bc169f|3742619901
+    - 0|3742619494|cc5fee6bc78935ece002db8309d8b57f|1f47c0120|1e638fd8cd360a923fbdb1aac4391380|3742619494
+    - 0|3742619241|84a6e4850a4e08b9156360b608c71f83|128151617|6bbb33401330e43091eeddcbbbe46bbd|3742619241
+    - 0|3742619076|fdc08fb9554ffa36f545b2bb8fd54211|143778f11|1606ebe067615c3f99a86eb92bf47509|3742619076
+  SMid: 
+  device: 202103182141519806b8fa44f1fde792790213d257e63101c26fd926853b25
+  udid: 
+    - 1102gx23fQ3YlyOwjJj3t30c0
+    - 1102gx23fQ3YlyOwjJj3t30c1
+    - 1102gx23fQ3YlyOwjJj3t30c2
+    - 1102gx23fQ3YlyOwjJj3t30c3
+    - 1102gx23fQ3YlyOwjJj3t30c4
+    - 1102gx23fQ3YlyOwjJj3t30c5
+    - 1102gx23fQ3YlyOwjJj3t30c6
+    - 1102gx23fQ3YlyOwjJj3t30c7
+    - 1102gx23fQ3YlyOwjJj3t30c8
+    - 1102gx23fQ3YlyOwjJj3t30c9
+    - 1102gx23fQ3YlyOwjJj3t30a0
+    - 1102gx23fQ3YlyOwjJj3t30a1
+    - 1102gx23fQ3YlyOwjJj3t30a2
+    - 1102gx23fQ3YlyOwjJj3t30a3
+    - 1102gx23fQ3YlyOwjJj3t30a4
+    - 1102gx23fQ3YlyOwjJj3t30a5
+    - 1102gx23fQ3YlyOwjJj3t30a6
+    - 1102gx23fQ3YlyOwjJj3t30a7
+    - 1102gx23fQ3YlyOwjJj3t30a8
+    - 1102gx23fQ3YlyOwjJj3t30a9
+  UA: Mozilla/5.0 (Linux; Android 10; V1990A Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.96 Mobile Safari/537.36 4399GameCenter/5.9.0.47(android;V1990A;10;1080x2118;WIFI;1554.594;bd.custom.1446)
+  
+
+
+#好游快爆 qq 留个用于兑换qb的q scookie 去我的-赚爆米花-任务里 随便抓一个post包 请求数据里有scookie 直接分享商品链接查看  gid 和 key 分享需要兑换的商品链接查看 例https://huodong3.3839.com/n/hykb/bmhstore2/inc/libao/index.php?gid=6237 比如上面这个 gid就是6237  key就是 libao 就是查看inc/后面的那个东西 
+# https://huodong3.3839.com/n/hykb/bmhstore2/inc/libao/index.php?gid=9178&jtype=1
+hykb:
+  scookie: 
+    - 1%7C0%7C51855138%7C5b%2Br54iG55So5oi3NTE4NTUxMzg%3D%7CkbB10C694D29C96D715E17BA1653B3B56B%7CpjVn7jfi7v9iITVwpv7AIv7x7vc0GiZw7Wen7T7Oplb%3D%251%7C2ce0480d7e187de145185bf136381764
+    - 1%7C0%7C69912101%7C5b%2Br54iG55So5oi3Njk5MTIxMDE%3D%7CkbB10C694D29C96D715E17BA1653B3B56B%7Cpiar7iIjpTexplDf7lpr7v5u7vIwIi7x7TXuGlew7j7%3D%251%7Cc3991e62ad077f00ac84634d28d2ae39
+  UA: Mozilla/5.0 (Linux; Android 10; V1990A Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.96 Mobile Safari/537.36Androidkb/1.5.5.802(android;V1990A;10;1080x2118;WIFI);@4399_sykb_android_activity@
+  qq: 314888192
+  gid: 9980
+  key: libao
+
+hupu:
+  token:
+    - 89660786|6JmO5omRSlIwNTE2NjM4NTUx|e2dc|4c67c99453e3ac96dec1828f2c8d02ef|2d15251fa0145985|aHVwdV9iNTUzY2ViY2IxMDkzOThi:18915732:65cc01fd0df075913b7da8fa23d2bb50c4be1e4205fa561340e71b929897f087ea79698bc31b2491552e3413255d65d7afcfa422c241475e331a2366a34a016b
+    - 95487772|6JmO5omRSlIxNzQxMjA3NzM4|225b|28fee584c0627301c5e3ecbe16b3a6ac|33c5673eb9bccf06|aHVwdV9iMmY4ZWM4NzE2NzBkNGZm:22583844:74eda49fc6d25a1f5c2dd329163083ced25b0a8fb369d0e8fc3d71f4102d2aa02e24c5542e2e2ffc50a29cdbc26fcc3d5e894933765c411d72b0580650465fc1
+    - 95487767|6JmO5omRSlIwNDM4NjI3Mjg1|9537|ed2cb6eb3b71a187c2c8521276b8f6e0|57361decbea1d806|aHVwdV8yZWQxZjc2MjY2ZjBhZmY0:24244420:465762f8f5271493f0efc114ff56feecb2e561cf3a1082d48710ebe5714d54491fa253b0295edb7956d9fddd1bb7bdc9dbf6bf25d6e4bcc289ca0291aefefad9
+
+
+#联众打码账号密码https://www.jsdati.com/
+Lzong:
+  account: 
+  password: 
+
+#多看阅读 cookie为app里的全部cookie
+duokan:
+  cookie: 
+  
+
+#橙光游戏app随便抓个包就有token
+cg:
+  token: 
+  skey: 
+  
+#绅士领域个人uid可抓签到包看到
+ssly:
+  uid: 12487
+  
+#时光相册 手机号密码 请抓登陆包查看 手机号里包括区号 86啥的 密码为加密后的密码
+everphoto:
+  phone: 8611012451110
+  password: 
+
+#书香门第 登陆账号密码(只支持字母+数字组合账号)
+sxmd:
+  account: 
+  password: 
+  
+#uclub这个签到失效了 在cookie里
+ucloud:
+  token: 
+  
+
+
+#网易蜗牛读书  都在cookie或者headers里 抓签到包最方便
+du163:
+  xsrf: 
+  X-Auth-Token: 
+
+
+  
+# 香网小说网页端 全部cookie
+xiang5:
+  cookie:  
+  
+#京东 全部cookie
+jd:
+  cookie: 
+
+#晋江小说 手机版网页端 m.jjwxc.net cookie中sid 最好抓签到的 填完整 sid=xxx
+jjwxc:
+  cookie: sid=20070297_1234576798787
+
+#什么值得买网页端 全部cookie
+smzdm:
+  cookie: 
+  
+#网易云游戏网页端  请求头里
+cg163:
+  Authorization:  
+#龙空论坛 全部cookie
+lkong:
+  cookie: 
+  
+#经管之家 全部cookie
+pinggu:
+  cookie:  
+  
+#nga论坛 app端 
+nga:
+  uid: 
+  accesstoken: 
+
+#cdsn 网页 全部cookie
+csdn:
+  cookie:  
+  
+#mt论坛 全部cookie
+mt:
+  cookie: 
+  time: ''
+
+#sf轻小说 app
+sfacg:
+  cookie: 
+
+#猫耳fm 网页 全部cookie
+maoer:
+  cookie:  
+  
+  
+#爱好论坛 全部cookie
+aihao:
+  cookie:  
+  
+#刺猬猫小说 账号密码
+hbooker:
+  login_name: 
+  passwd: 
+
+#ACFun 手机号 密码
+acfun:
+  phone: 
+  password: 
+
+#传奇gm论坛 全部cookie
+diygm:
+  cookie:  
+  
+#一亩三分地 登陆账号 密码 (不要设置登录问题) 联众打码平台 账号密码
+ym3fd:
+  username: 
+  password: 
+  lzusername: 
+  lzpassword: 
+
+#次元狗 全部cookie
+acdog:
+  cookie:  
+  
+#登陆联想智选app的手机号密码以及请求头header中的baseinfo
+lenovo:
+  account: 
+  password: 
+  baseinfo: 
+  
+#数码之家全部cookie
+mydigit:
+  cookie: 
+  
+#联动云租车 全部cookie
+ldygo:
+  cookie: 
+  
+#玩物志好物商店 如果是小程序登陆的 type 默认为wx 如果是网页的就随便改比如 web 123等等,只要不是wx就行,小程序可不填cookie,网页需要
+coolbuy:
+  type: wx
+  authorization: 
+  xcsrftoken: 
+  cookie:   
+  
+#阅次元论坛:
+abooky:
+  cookie: 
+  
+#富贵论坛
+fglt: 
+  cookie: 
+ 
+#纪录片之家
+jlpzj: 
+  cookie: 
+  
+#ug爱好者
+ugsnx:
+  cookie:  
+  
+#好书友论坛 
+hsy: 
+  cookie: 
+  
+#togamemod
+togamemod: 
+  cookie: 
+  
+#魅族社区
+meizu: 
+  cookie: 
+ 
+#菜鸟图库
+sucai999:
+  cookie: 
+
+#埋堆堆app
+mdd: 
+  appToken: 
+  
+#闪艺app  都在app请求post数据里  client为ios或者android gids 需要每天做刷粉丝值的作品id 用&分割 建议少于12个
+shanyi:
+  token: 
+  u: 
+  gids: 
+  client: ios
+  UA: 
+  
+  
+#香蕉视频 xxx_api_auth记得加双引号
+xjvideo:
+  xxx_api_auth: 
+  baseurl: https://7kp1t2vde8wt7p8tc0km.lagoapps.com
+  
+    
+#有分享论坛
+bl20166:
+  cookie:        
+
+#BigFun网页版  token在请求头里 x-csrf-token
+bigfun:
+  cookie: 
+  token:   
+
+#阡陌居
+qmj: 
+  cookie:     
+
+#HiFiNi
+hifini:
+  cookie: 
+  
+#Hires后花园
+dsdlove:
+  cookie
+            
+#百度爱企查  格式变动
+aiqicha: 
+  cookie: 
+    - cookie在这里 -不能取消 空格也要
+    - 多账号继续往下 不需要的请删除
+
+#曲奇云盘      
+quqi:
+  cookie:  
+  
+#奥拉星积分商城
+aoqi:
+  cookie:   
+  
+  
+  
+#鱼C论坛
+fishc:
+  cookie: 
+  
+#村花论坛
+cunhua: 
+  cookie: 
+
+#帆软社区 脚本fanruan.js
+fanruan:
+  cookie: 
+  
+#云原神 需要在云原神里抓包x-rpc-combo_token
+yunys: 
+  combo_token: ai=x;ci=x;oi=xxxxxx;ct=xxxxxx;si=xxxxxx;bi=xxxxxx
+  type: 
+  app_version: 
+  sys_version: 
+  device_id: 
+  device_name: 
+  device_model: 
+  app_id: 
+
+#瞻彼文学 cookie为app里的全部cookie zbwx.js
+zbwx: 
+  cookie: accessToken=xxxxxxxx
+  
+#天使动漫  tsdm.js
+tsdm:
+  cookie:  
+      
+#耽漫资源网  fuman99.js
+fuman99:
+  cookie: 
+  
+#Qoo token  Qoo.js
+Qoo:
+  token:       
+
+#轻之文库 linovel.js
+linovel:
+  cookie:   
+ 

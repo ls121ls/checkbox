@@ -94,21 +94,21 @@ async function inittask() {
   await get("grow", "Watering&id=6"); //浇灌
   let canzl = true
   let mode =0
-  let uids = await axios.get("http://1oner.cn:1919/hykb/all?res=uid")
-  if(uids && uids.data && uids.data.message) buid = uids.data.message
-  for (i of buid) { 
-  if(mode!=2){
-   if(canzl) {          
-  let zlres= await get("grow", `gamehander&buid=${i}&icon_id=58`); //照料
-  mode = zlres.mode
-  if(zlres.sy_day_shijian_corn_max_num ==0) canzl=false
-}
-    if (i != 21039293) {      
-    let stealres = await get("grow",  `gamehander&buid=${i}&icon_id=888888`,true); //偷玉米
-      console.log(`偷 ${i}玉米 ${stealres.msg}`)  
-    }
-  }}
-  if(mode!=2)  await axios.post("http://1oner.cn:1919/hykb/add", `uid=${logindata.uid}&nickname=${encodeURI(logindata.name)}`)
+  // let uids = await axios.get("http://1oner.cn:1919/hykb/all?res=uid")
+  // if(uids && uids.data && uids.data.message) buid = uids.data.message
+  // for (i of buid) { 
+//   if(mode!=2){
+//    if(canzl) {          
+//   let zlres= await get("grow", `gamehander&buid=${i}&icon_id=58`); //照料
+//   mode = zlres.mode
+//   if(zlres.sy_day_shijian_corn_max_num ==0) canzl=false
+// }
+//     if (i != 21039293) {      
+//     let stealres = await get("grow",  `gamehander&buid=${i}&icon_id=888888`,true); //偷玉米
+//       console.log(`偷 ${i}玉米 ${stealres.msg}`)  
+//     }
+//   }}
+//   if(mode!=2)  await axios.post("http://1oner.cn:1919/hykb/add", `uid=${logindata.uid}&nickname=${encodeURI(logindata.name)}`)
   for (i of id) {
     i = i.match(/\.(.+)\((\d+)\)/);
     switch (i[1]) {

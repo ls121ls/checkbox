@@ -6,10 +6,11 @@ const yaml = require("js-yaml");
 const fs = require('fs');
 const yargs = require('yargs');
 var argv = yargs.argv;
-config = null,notify = null,signlist = [],logs = ""
+config = null,notify = null,logs = ""
 
 //自行添加任务 名字看脚本里的文件名 比如csdn.js 就填"csdn"
-var cbList = []
+var cbList = [""]
+var signlist = [""]
 if (fs.existsSync("./config.yml")) config = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
 if (fs.existsSync("./sendNotify.js")) notify = require('./sendNotify')
 let QL = process.env.QL_DIR
@@ -25,8 +26,8 @@ if (QL) {
     else console.log("亲,您的依赖掉啦,但是没有完全掉 请重装依赖\npnpm install  axios crypto-js fs iconv-lite js-yaml yargs\n或者\nnpm install  axios crypto-js fs iconv-lite js-yaml yargs")
  }
 }
-if(config) signlist = config.cbList.split("&")
 var signList = (argv._.length) > 0 ? argv._ : (cbList.length>0 ? cbList : signlist) 
+if(config) signList = config.cbList.split("&")
 if (config) start(signList);
 function start(taskList) {
     return new Promise(async (resolve) => {
